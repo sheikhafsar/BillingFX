@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -17,29 +20,35 @@
 
 <?import javafx.scene.text.Font?>
 <?import javafx.geometry.Insets?>
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controller.BillTemplateController">
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BillTemplateController">
     <children>
         <Group>
             <children>
                 <AnchorPane layoutX="141.0" layoutY="-7.0" prefHeight="215.0" prefWidth="1278.0">
                     <children>
-                        <Label layoutX="665.0" layoutY="18.0" text="Invoice" textFill="#c2194f">
+                        <Label layoutX="623.0" layoutY="79.0" text="Invoice" textFill="#c2194f">
                             <font>
                                 <Font name="System Bold" size="24.0" />
                             </font>
                         </Label>
-                        <Label layoutX="82.0" layoutY="73.0" text="Retailer Name :">
+                        <Label layoutX="99.0" layoutY="176.0" text="Retailer Name :">
                             <font>
                                 <Font size="14.0" />
                             </font>
                         </Label>
-                        <Label fx:id="RetailerNameDisplay" layoutX="209.0" layoutY="76.0" prefHeight="17.0" prefWidth="90.0" text="RatailerName" textAlignment="CENTER" textFill="#cf36368f" />
-                        <Label layoutX="982.0" layoutY="73.0" text="Date :">
+                        <Label fx:id="RetailerNameDisplay" layoutX="224.0" layoutY="177.0" prefHeight="17.0" prefWidth="90.0" text="RatailerName" textAlignment="CENTER" textFill="#cf36368f" />
+                        <Label layoutX="987.0" layoutY="167.0" text="Date :">
                             <font>
                                 <Font size="14.0" />
                             </font>
                         </Label>
-                        <DatePicker layoutX="1046.0" layoutY="68.0" />
+                        <DatePicker layoutX="1050.0" layoutY="162.0" />
+                  <ImageView fitHeight="62.0" fitWidth="57.0" layoutX="630.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../1724_mineSweeper/dist/images/smileFace.png" />
+                     </image>
+                  </ImageView>
                     </children>
                 </AnchorPane>
             </children>
@@ -83,6 +92,8 @@
                                         <TableColumn prefWidth="75.0" text="Total" />
                                     </columns>
                                 </TableView>
+                        <Button layoutX="84.0" layoutY="43.0" mnemonicParsing="false" text="Button" />
+                        <Button layoutX="382.0" layoutY="43.0" mnemonicParsing="false" text="Button" />
                             </children>
                         </AnchorPane>
                         <Button layoutX="48.0" layoutY="527.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="117.0" style="-fx-background-color: aqua;" text="Submit" />
@@ -123,6 +134,5 @@
                 </AnchorPane>
             </items>
         </SplitPane>
-        <ComboBox prefWidth="150.0" />
     </children>
 </VBox>
