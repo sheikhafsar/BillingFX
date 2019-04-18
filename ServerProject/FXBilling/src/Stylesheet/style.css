@@ -1,0 +1,43 @@
+
+
+.loginbg{
+
+    -fx-background-color: linear-gradient(to top,#c31399,#9118fd);
+}
+
+.btn-login{
+         -fx-background-color:#9013fb;
+         -fx-text-fill:#FFF;
+         -fx-font-size:15px;
+         -fx-font-weight:700;
+         -fx-background-radius:8px;
+
+}
+
+.lblStatus{
+
+        -fx-background-color:#c0139f;
+         -fx-text-fill:#FFF;
+         -fx-font-size:16px;
+         -fx-alignment:CENTER;
+         -fx-background-radius:8px;
+}
+
+.lblUser{
+
+
+         -fx-text-fill:black;
+         -fx-font-size:16px;
+         -fx-alignment:CENTER;
+          -fx-font-weight:700;
+}
+
+.tab-pane{
+
+    -fx-tab-max-height:0px;
+}
+
+.tab-pane.tab-header-area{
+
+visibility:hidden;
+}
