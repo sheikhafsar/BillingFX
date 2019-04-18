@@ -6,6 +6,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_15.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FXBilling.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FXBilling.iml" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/out/production/FXBilling/META-INF/FXBilling.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/DBHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/DBHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/check.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/check.fxml" afterDir="false" />
@@ -111,11 +112,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/trialDashboard.fxml">
           <provider selected="true" editor-type-id="text-editor">
+
             <state relative-caret-position="414">
               <caret line="28" column="121" selection-start-line="28" selection-start-column="121" selection-end-line="28" selection-end-column="121" />
+
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -241,12 +249,15 @@
               <item name="FXBilling" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
+
             </path>
             <path>
               <item name="FXBilling" type="b2602c69:ProjectViewProjectNode" />
               <item name="FXBilling" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+
               <item name="view" type="462c0819:PsiDirectoryNode" />
+
             </path>
             <path>
               <item name="FXBilling" type="b2602c69:ProjectViewProjectNode" />
@@ -272,8 +283,9 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555581518228" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555582427226" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -528,9 +540,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="37" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="37" />
+
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
