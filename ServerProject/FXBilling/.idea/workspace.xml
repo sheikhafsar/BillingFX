@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/controller/BillTemplateController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/billTemplate.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FXBilling/view/dashboard.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FXBilling/view/trailLogin.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/trailDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/trialDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/trialLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/trialLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/trialDashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/trailLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/trialLogin.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -198,7 +187,7 @@
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1615" />
@@ -243,7 +232,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555580081868" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555581518228" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
