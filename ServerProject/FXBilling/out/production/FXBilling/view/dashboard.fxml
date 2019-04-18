@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.trailDashboardController">
+   <children>
+      <Label fx:id="username" layoutX="55.0" layoutY="24.0" text="Label" />
+      <Button layoutX="129.0" layoutY="19.0" mnemonicParsing="false" text="Logout" />
+      <Button fx:id="empBtn" layoutX="254.0" layoutY="112.0" mnemonicParsing="false"  text="Employee" />
+      <Button fx:id="productBtn" layoutX="252.0" layoutY="182.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="85.0" text="Product" />
+      <Button fx:id="billsBtn" layoutX="247.0" layoutY="254.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="85.0" text="Bills" />
+   </children>
+</AnchorPane>
