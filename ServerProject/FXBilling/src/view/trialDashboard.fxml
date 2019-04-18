@@ -5,9 +5,22 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<!--
+<BorderPane fx:id="mainBorderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.trialDashboardController">
+   <left>
+      <VBox spacing="5">
+         <Button text="btn 1" userData="/view/view_1.fxml" onAction="#handleShowView"/>
+         <Button text="btn 2" userData="/view/view_2.fxml" onAction="#handleShowView"/>
+         <Button text="btn 3" userData="/view/view_3.fxml" onAction="#handleShowView"/>
+      </VBox>
+   </left>
+   <center>
+      <fx:include source="view_1.fxml"/>
+   </center>
+</BorderPane>
+-->
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.trailDashboardController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.trialDashboardController">
    <children>
       <Label fx:id="username" layoutX="55.0" layoutY="24.0" text="Label" />
       <Button layoutX="129.0" layoutY="19.0" mnemonicParsing="false" text="Logout" />
