@@ -7,36 +7,39 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <StackPane styleClass="loginbg" stylesheets="@../Stylesheet/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
     <children>
         <AnchorPane prefHeight="644.0" prefWidth="940.0">
             <children>
-                <AnchorPane layoutX="408.0" layoutY="88.0" prefHeight="516.0" prefWidth="504.0" style="-fx-background-color: #FFF; -fx-background-radius: 10px;">
+                <AnchorPane layoutX="303.0" layoutY="83.0" prefHeight="516.0" prefWidth="623.0" style="-fx-background-color: #FFF; -fx-background-radius: 10px;">
                     <effect>
                         <DropShadow />
                     </effect>
                     <children>
-                        <TabPane fx:id="tabPaneLogin" layoutX="42.0" layoutY="129.0" prefHeight="297.0" prefWidth="401.0" tabClosingPolicy="UNAVAILABLE">
+                        <TabPane fx:id="tabPaneLogin" layoutX="42.0" layoutY="132.0" prefHeight="294.0" prefWidth="459.0" tabClosingPolicy="UNAVAILABLE">
                             <tabs>
                                 <Tab fx:id="tabAdmin" text="ADMIN">
                                     <content>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="285.0" prefWidth="416.0">
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="286.0" prefWidth="453.0">
                                             <children>
-                                                <TextField layoutX="79.0" layoutY="59.0" prefHeight="40.0" prefWidth="263.0" />
-                                                <TextField layoutX="79.0" layoutY="130.0" prefHeight="40.0" prefWidth="263.0" />
-                                                <Button layoutX="168.0" layoutY="197.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="100.0" styleClass="btn-login" text="LOGIN" />
+                                                <TextField fx:id="adminUsername" layoutX="152.0" layoutY="60.0" prefHeight="40.0" prefWidth="263.0" />
+                                                <Button fx:id="adminLoginBtn" layoutX="168.0" layoutY="197.0" mnemonicParsing="false" onAction="#adminLoginHandler" prefHeight="46.0" prefWidth="100.0" styleClass="btn-login" text="LOGIN" />
+                                                <Label layoutX="34.0" layoutY="70.0" prefHeight="21.0" prefWidth="80.0" text=" Username" />
+                                                <Label layoutX="38.0" layoutY="143.0" prefHeight="21.0" prefWidth="69.0" text="Password" />
+                                    <PasswordField fx:id="adminPassword" layoutX="153.0" layoutY="128.0" prefHeight="43.0" prefWidth="261.0" />
                                             </children>
                                         </AnchorPane>
                                     </content>
                                 </Tab>
                                 <Tab fx:id="tabUser" text="USER">
                                     <content>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="tab-header-area">
                                             <children>
-                                                <TextField layoutX="103.0" layoutY="62.0" prefHeight="40.0" prefWidth="249.0" />
-                                                <TextField layoutX="103.0" layoutY="139.0" prefHeight="40.0" prefWidth="245.0" />
-                                                <Button layoutX="171.0" layoutY="202.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="101.0" styleClass="btn-login" text="LOGIN" />
+                                                <TextField fx:id="username" layoutX="103.0" layoutY="62.0" prefHeight="40.0" prefWidth="249.0" />
+                                                <Button fx:id="userLoginBtn" layoutX="171.0" layoutY="202.0" mnemonicParsing="false" onAction="#userLoginHandler" prefHeight="46.0" prefWidth="101.0" styleClass="btn-login" text="LOGIN" />
+                                                <Label layoutX="14.0" layoutY="72.0" prefHeight="21.0" prefWidth="90.0" text="Username" />
+                                                <Label layoutX="14.0" layoutY="149.0" prefHeight="27.0" prefWidth="73.0" text="Password" />
+                                    <PasswordField fx:id="password" layoutX="103.0" layoutY="137.0" prefHeight="43.0" prefWidth="251.0" />
                                             </children>
                                         </AnchorPane>
                                     </content>
@@ -45,12 +48,12 @@
                         </TabPane>
                         <Pane fx:id="slidingPane" layoutX="36.0" layoutY="52.0" prefHeight="50.0" prefWidth="426.0" style="-fx-background-color: #CFCFCF;">
                             <children>
-                                <Label layoutX="-7.0" layoutY="-2.0" prefHeight="50.0" prefWidth="219.0" styleClass="lblUser" text=" ADMINISTRATOR">
+                                <Label fx:id="lblAdmin" layoutX="-7.0" layoutY="-2.0" onMouseClicked="#openAdminTab" prefHeight="50.0" prefWidth="219.0" styleClass="lblUser" text=" ADMINISTRATOR">
                                     <cursor>
                                         <Cursor fx:constant="HAND" />
                                     </cursor>
                                 </Label>
-                                <Label layoutX="214.0" onMouseClicked="#openUserTab" prefHeight="50.0" prefWidth="212.0" styleClass="lblUser" text="USER" />
+                                <Label fx:id="lblUser" layoutX="214.0" onMouseClicked="#openUserTab" prefHeight="50.0" prefWidth="212.0" styleClass="lblUser" text="USER" />
                             </children>
                         </Pane>
                         <Group>
@@ -62,10 +65,9 @@
                                 </Label>
                             </children>
                         </Group>
-                        <Label layoutX="114.0" layoutY="454.0" prefHeight="27.0" prefWidth="280.0" text="Label" />
+                        <Label fx:id="loginOutput" layoutX="114.0" layoutY="454.0" prefHeight="27.0" prefWidth="280.0" />
                     </children>
                 </AnchorPane>
-                <TabPane layoutX="153.0" layoutY="139.0" prefHeight="236.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" />
             </children>
         </AnchorPane>
     </children>

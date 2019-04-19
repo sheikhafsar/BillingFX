@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.trialDashboardController">
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="username" layoutX="68.0" layoutY="31.0" />
+            <Button fx:id="logoutBtn" layoutX="67.0" layoutY="62.0" mnemonicParsing="false" onAction="#logoutHandler" text="Logout" />
+            <Button layoutX="55.0" layoutY="127.0" mnemonicParsing="false" text="Employees" />
+            <Button layoutX="62.0" layoutY="185.0" mnemonicParsing="false" text="Products" />
+            <Button fx:id="bills" layoutX="79.0" layoutY="243.0" mnemonicParsing="false" onAction="#displayBills" text="Bills" />
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>

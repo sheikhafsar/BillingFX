@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.DBHandler;
+import model.UserSession;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -45,6 +46,7 @@ public class trialLoginController {
         PreparedStatement ps = null;
         ResultSet rs = null;
         int recordCounter=0;
+        //UserSession loggedinUser;
 
         try{
             con=db.getConnection();
@@ -55,6 +57,8 @@ public class trialLoginController {
 
             if (rs.next()){
                 System.out.println("Name: "+rs.getString("firstname")+" "+rs.getString("lastname"));
+                UserSession.loggedInUser= UserSession.getInstance(rs.getString("firstname"));
+                System.out.println("LoggedIn user:"+UserSession.loggedInUser.getUserName());
                 //loginOutput.setText(rs.getString("firstname")+" "+rs.getString("lastname"));
               /*  root = FXMLLoader.load(getClass().getResource("../view/trialDashboard.fxml"));
                 Stage stage = new Stage();
@@ -63,7 +67,9 @@ public class trialLoginController {
                 stage.show();
                 */
                 Stage stage = (Stage) loginButton.getScene().getWindow();
-                Parent root = FXMLLoader.load(getClass().getResource("../view/billTemplate.fxml"));
+                //FXMLLoader loader = new FXMLLoader();
+                //loader.getNamespace().put("username",UserSession.loggedInUser.getUserName());
+                Parent root = FXMLLoader.load(getClass().getResource("../view/trialDashTemp.fxml"));
                 //Scene scene =  (Scene) loginButton.getScene();
                 //scene.setRoot(root);
                 Scene scene =  new Scene(root, 800 ,600);
