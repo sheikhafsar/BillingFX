@@ -167,7 +167,7 @@ public class LoginController {
                 Stage stage = (Stage) adminLoginBtn.getScene().getWindow();
                 FXMLLoader loader = new FXMLLoader();
                 //loader.getNamespace().put("username",UserSession.loggedInUser.getUserName());
-                Parent root = FXMLLoader.load(getClass().getResource("../view/trialDashTemp.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("../view/billTemplate.fxml"));
                 Scene scene =  new Scene(root, Global.WIDTH ,Global.HEIGHT);
                 stage.setScene(scene);
                 stage.show();

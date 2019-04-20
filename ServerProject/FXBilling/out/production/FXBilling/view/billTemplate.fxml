@@ -1,128 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<!--
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.BillTemplateController"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
--->
-
-<?import javafx.scene.text.Font?>
-<?import javafx.geometry.Insets?>
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controller.BillTemplateController">
-    <children>
-        <Group>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="loginbg" stylesheets="@../Stylesheet/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BillTemplateController">
+    <left>
+        <AnchorPane prefHeight="459.0" prefWidth="461.0" BorderPane.alignment="CENTER">
             <children>
-                <AnchorPane layoutX="141.0" layoutY="-7.0" prefHeight="215.0" prefWidth="1278.0">
-                    <children>
-                        <Label layoutX="665.0" layoutY="18.0" text="Invoice" textFill="#c2194f">
-                            <font>
-                                <Font name="System Bold" size="24.0" />
-                            </font>
-                        </Label>
-                        <Label layoutX="82.0" layoutY="73.0" text="Retailer Name :">
-                            <font>
-                                <Font size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="RetailerNameDisplay" layoutX="209.0" layoutY="76.0" prefHeight="17.0" prefWidth="90.0" text="RatailerName" textAlignment="CENTER" textFill="#cf36368f" />
-                        <Label layoutX="982.0" layoutY="73.0" text="Date :">
-                            <font>
-                                <Font size="14.0" />
-                            </font>
-                        </Label>
-                        <DatePicker layoutX="1046.0" layoutY="68.0" />
-                    </children>
-                </AnchorPane>
+                <TextField fx:id="searchTextArea" layoutX="80.0" layoutY="73.0" prefHeight="37.0" prefWidth="201.0" promptText="Product Barcode" />
+                <Button fx:id="addProdButton" layoutX="181.0" layoutY="146.0" mnemonicParsing="false" onAction="#addProdHandler" prefHeight="31.0" prefWidth="77.0" text="Add" />
+            <Label fx:id="errorOutput" layoutX="144.0" layoutY="219.0" />
+            <TextField fx:id="qtyTextField" layoutX="309.0" layoutY="73.0" prefHeight="37.0" prefWidth="55.0" promptText="qty" />
             </children>
-        </Group>
-        <SplitPane />
-        <SplitPane dividerPositions="0.5" prefHeight="584.0" prefWidth="1280.0">
-            <items>
-                <Group>
-                    <children>
-                        <Group>
-                            <children>
-                                <Group>
-                                    <children>
-                                        <TableView fixedCellSize="0.0" layoutX="-1.0" layoutY="58.0" prefHeight="502.0" prefWidth="776.0">
-                                            <columns>
-                                                <TableColumn prefWidth="55.0" text="Sr No." />
-                                                <TableColumn prefWidth="373.0" text="Product Name" />
-                                                <TableColumn prefWidth="173.0" text="Qty" />
-                                                <TableColumn prefWidth="174.0" text="Total" />
-                                            </columns>
-                                        </TableView>
-                                    </children>
-                                </Group>
-                                <Label />
-                                <TextField fx:id="searchTextArea" layoutX="17.0" layoutY="4.0" promptText="Search Product" />
-                                <Button fx:id="addProdButton" layoutX="204.0" layoutY="3.0" mnemonicParsing="false" text="Add" />
-                            </children>
-                        </Group>
-                    </children>
-                </Group>
-                <AnchorPane layoutX="103.0" layoutY="99.0" prefHeight="551.0" prefWidth="494.0">
-                    <children>
-                        <AnchorPane layoutX="-5.0" layoutY="-1.0" prefHeight="400.0" prefWidth="495.0">
-                            <children>
-                                <TableView layoutY="126.0" prefHeight="275.0" prefWidth="495.0">
-                                    <columns>
-                                        <TableColumn fx:id="BillSrNo" prefWidth="56.0" text="Sr No." />
-                                        <TableColumn fx:id="billItemName" prefWidth="230.90771484375" text="Item Name" />
-                                        <TableColumn prefWidth="63.779541015625" text="Qty" />
-                                        <TableColumn prefWidth="72.71533203125" text=" Unit Price" />
-                                        <TableColumn prefWidth="75.0" text="Total" />
-                                    </columns>
-                                </TableView>
-                            </children>
-                        </AnchorPane>
-                        <Button layoutX="48.0" layoutY="527.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="117.0" style="-fx-background-color: aqua;" text="Submit" />
-                        <TextField layoutX="373.0" layoutY="532.0" prefHeight="27.0" prefWidth="113.0" />
-                        <Label layoutX="298.0" layoutY="540.0" text="Total">
-                            <font>
-                                <Font size="18.0" />
-                            </font>
-                        </Label>
-                        <ListView layoutX="276.0" layoutY="415.0" prefHeight="90.0" prefWidth="213.0" />
-                        <Label fx:id="RetailerNameDisplay1" layoutX="380.0" layoutY="422.0" prefHeight="17.0" prefWidth="90.0" text="Subtotal" textAlignment="CENTER" textFill="#cf36368f">
-                            <font>
-                                <Font size="14.0" />
-                            </font>
-                        </Label>
-                        <Label layoutX="290.0" layoutY="447.0" prefHeight="24.0" prefWidth="68.0" text="Discount">
-                            <font>
-                                <Font name="Arial Bold Italic" size="14.0" />
-                            </font>
-                            <padding>
-                                <Insets right="5.0" />
-                            </padding>
-                        </Label>
-                        <Label layoutX="290.0" layoutY="418.0" prefHeight="24.0" prefWidth="76.0" text="Sub Total">
-                            <font>
-                                <Font name="Arial Bold Italic" size="14.0" />
-                            </font>
-                            <padding>
-                                <Insets right="5.0" />
-                            </padding>
-                        </Label>
-                        <Label fx:id="RetailerNameDisplay11" layoutX="376.0" layoutY="450.0" prefHeight="17.0" prefWidth="90.0" text="Discount" textAlignment="CENTER" textFill="#cf36368f">
-                            <font>
-                                <Font size="14.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </AnchorPane>
-            </items>
-        </SplitPane>
-        <ComboBox prefWidth="150.0" />
-    </children>
-</VBox>
+        </AnchorPane>
+    </left>
+    <top>
+        <AnchorPane prefHeight="154.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="username" layoutX="806.0" layoutY="71.0" prefHeight="41.0" prefWidth="248.0" text="username">
+                    <font>
+                        <Font name="System Bold" size="26.0" />
+                    </font>
+                </Label>
+                <Button fx:id="logoutBtn" layoutX="1095.0" layoutY="69.0" mnemonicParsing="false" onAction="#logoutHandler" prefHeight="35.0" prefWidth="156.0" text="LOGOUT">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+    </top>
+    <bottom>
+        <AnchorPane prefHeight="167.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+            <children>
+                <ListView layoutX="460.0" layoutY="-4.0" prefHeight="191.0" prefWidth="815.0" />
+                <Label layoutX="586.0" layoutY="33.0" prefHeight="36.0" prefWidth="69.0" text="Sub Total">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="591.0" layoutY="76.0" prefHeight="31.0" prefWidth="59.0" text="Discount">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <Label layoutX="838.0" layoutY="142.0" prefHeight="31.0" prefWidth="59.0" text="Total" />
+                <Button layoutX="581.0" layoutY="142.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="79.0" style="-fx-background-color: aqua;" text="Button" />
+                <TextField layoutX="915.0" layoutY="142.0" prefHeight="31.0" prefWidth="165.0" />
+            </children>
+        </AnchorPane>
+    </bottom>
+    <center>
+        <TableView fx:id="prodTable" prefHeight="459.0" prefWidth="814.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="col_id" prefWidth="56.0" text="Sr No." />
+                <TableColumn fx:id="col_name" prefWidth="295.0" text="Item Name" />
+                <TableColumn fx:id="col_quantity" minWidth="0.0" prefWidth="193.0" text="Qty" />
+                <TableColumn fx:id="col_price" prefWidth="134.0" text=" Unit Price" />
+                <TableColumn prefWidth="180.0" text="Total" />
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>
