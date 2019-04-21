@@ -120,7 +120,7 @@ public class LoginController {
 
             if (rs.next()){
                 System.out.println("Name: "+rs.getString("username"));
-                UserSession.loggedInUser= UserSession.getInstance(rs.getString("username"));
+                UserSession.loggedInUser= UserSession.getInstance(rs.getString("username"),rs.getInt("id"));
                 System.out.println("LoggedIn Admin:"+UserSession.loggedInUser.getUserName());
                 //loginOutput.setText(rs.getString("firstname")+" "+rs.getString("lastname"));
 
@@ -160,11 +160,11 @@ public class LoginController {
 
             if (rs.next()){
                 System.out.println("Name: "+rs.getString("firstname")+" "+rs.getString("lastname"));
-                UserSession.loggedInUser= UserSession.getInstance(rs.getString("firstname"));
+                UserSession.loggedInUser= UserSession.getInstance(rs.getString("firstname"),rs.getInt("id"));
                 System.out.println("LoggedIn user:"+UserSession.loggedInUser.getUserName());
                 //loginOutput.setText(rs.getString("firstname")+" "+rs.getString("lastname"));
 
-                Stage stage = (Stage) adminLoginBtn.getScene().getWindow();
+                Stage stage = (Stage) userLoginBtn.getScene().getWindow();
                 FXMLLoader loader = new FXMLLoader();
                 //loader.getNamespace().put("username",UserSession.loggedInUser.getUserName());
                 Parent root = FXMLLoader.load(getClass().getResource("../view/billTemplate.fxml"));

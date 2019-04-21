@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2019 at 01:48 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.1.27
+-- Generation Time: Apr 21, 2019 at 09:48 PM
+-- Server version: 10.1.29-MariaDB
+-- PHP Version: 7.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -54,7 +54,8 @@ CREATE TABLE `bill` (
   `bill_id` int(3) NOT NULL,
   `date` date NOT NULL,
   `customer_name` varchar(20) NOT NULL,
-  `emp_id` varchar(5) NOT NULL
+  `emp_id` int(3) NOT NULL,
+  `amount` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -65,7 +66,8 @@ CREATE TABLE `bill` (
 
 CREATE TABLE `bill_prod` (
   `bill_id` int(3) NOT NULL,
-  `prod_id` int(2) NOT NULL
+  `prod_id` int(2) NOT NULL,
+  `quantity` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -76,7 +78,7 @@ CREATE TABLE `bill_prod` (
 
 CREATE TABLE `employee` (
   `id` int(2) NOT NULL,
-  `userName` varchar(5) NOT NULL,
+  `username` varchar(5) NOT NULL,
   `password` varchar(20) NOT NULL,
   `firstname` varchar(20) NOT NULL,
   `lastname` varchar(20) NOT NULL,
@@ -89,13 +91,13 @@ CREATE TABLE `employee` (
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`id`, `userName`, `password`, `firstname`, `lastname`, `phone`, `email`, `address`) VALUES
+INSERT INTO `employee` (`id`, `username`, `password`, `firstname`, `lastname`, `phone`, `email`, `address`) VALUES
 (1, 'EMP1', 'afsar123', 'Afsar', 'Sheikh', '7038137214', 'sheikhafsar72@gmail.com', 'Mapusa'),
 (2, 'EMP2', '12345', 'Pranita', 'Sawant', '8805472219', '1995sawantpranita@gmail.com', 'Margao'),
 (3, 'EMP3', 'raj123', 'Raj', 'Nadaf', '7350447722', 'rajahmednadaf3@gmail.com', 'Margao'),
 (4, 'EMP4', 'shweta123', 'Shweta', 'Kauthankar', '8766457813', 'sweta.kauthankar@gmail.com', 'Pernem'),
 (5, 'EMP5', 'vishu123', 'Vishwanath', 'Patil', '8408998252', 'vishwanath.patil1996@gmail.com>', 'Porvorim'),
-(6, 'ee', 'ee', 'karan', 'naik', '100', 'police@gmail.com', 'Margao');
+(6, 'ee', 'ee', 'ee', 'ee', '123', 'asdf', 'Margao');
 
 -- --------------------------------------------------------
 
@@ -110,6 +112,14 @@ CREATE TABLE `product` (
   `quantity` int(3) NOT NULL,
   `price` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`id`, `name`, `barcode`, `quantity`, `price`) VALUES
+(1, 'Youva Book', '8902442208032', 10, '45.00'),
+(2, 'Maxwriter pen', '8904075213995', 10, '10.00');
 
 --
 -- Indexes for dumped tables
@@ -145,7 +155,7 @@ ALTER TABLE `employee`
   ADD UNIQUE KEY `password` (`password`),
   ADD UNIQUE KEY `phone` (`phone`),
   ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `username` (`userName`);
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- Indexes for table `product`
@@ -180,7 +190,7 @@ ALTER TABLE `employee`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
@@ -190,14 +200,14 @@ ALTER TABLE `product`
 -- Constraints for table `bill`
 --
 ALTER TABLE `bill`
-  ADD CONSTRAINT `bill_ibfk_1` FOREIGN KEY (`emp_id`) REFERENCES `employee` (`userName`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `bill_ibfk_1` FOREIGN KEY (`emp_id`) REFERENCES `employee` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `bill_prod`
 --
 ALTER TABLE `bill_prod`
-  ADD CONSTRAINT `bill_prod_ibfk_1` FOREIGN KEY (`bill_id`) REFERENCES `bill` (`bill_id`),
-  ADD CONSTRAINT `bill_prod_ibfk_2` FOREIGN KEY (`prod_id`) REFERENCES `product` (`id`);
+  ADD CONSTRAINT `bill_prod_ibfk_1` FOREIGN KEY (`bill_id`) REFERENCES `bill` (`bill_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `bill_prod_ibfk_2` FOREIGN KEY (`prod_id`) REFERENCES `product` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

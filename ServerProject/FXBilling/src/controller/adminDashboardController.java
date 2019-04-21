@@ -64,7 +64,7 @@ public class adminDashboardController implements Initializable {
     }
 
     public void logoutHandler(ActionEvent actionEvent) throws IOException {
-        UserSession.loggedInUser = null;
+        UserSession.setInstance(null);
         Stage stage = (Stage) logoutBtn.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("../view/Login.fxml"));
         Scene scene =  new Scene(root, 1280 ,800);

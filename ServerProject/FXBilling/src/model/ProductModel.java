@@ -1,25 +1,29 @@
 package model;
 
 public class ProductModel {
-    String id;
+    int id;
     String name;
     String barcode;
-    String quantity;
-    String price;
+    int quantity;
+    double price;
+    double total;
+    int count;
 
-    public ProductModel(String id, String name, String barcode, String quantity, String price) {
+    public ProductModel(int id, String name, String barcode, int quantity, double price, double total, int count) {
         this.id = id;
         this.name = name;
         this.barcode = barcode;
         this.quantity = quantity;
         this.price = price;
+        this.total = total;
+        this.count =count;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -39,22 +43,36 @@ public class ProductModel {
         this.barcode = barcode;
     }
 
-    public String getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
+    public double getTotal() {
+        return total;
+    }
 
+    public void setTotal(double total) {
+        this.total = total;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
 
 }
