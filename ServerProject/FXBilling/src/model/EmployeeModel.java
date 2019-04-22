@@ -1,13 +1,15 @@
 package model;
 
 
+import java.util.UUID;
+
 public class EmployeeModel {
-    int id;
+    UUID id;
     String username,password,firstname,lastname,email,phone,address;
 
     public EmployeeModel() { }
 
-    public EmployeeModel(int id, String username, String password, String firstname, String lastname, String email, String phone, String address){
+    public EmployeeModel(UUID id, String username, String password, String firstname, String lastname, String email, String phone, String address){
         this.id = id;
         this.username = username;
         this.password = password;
@@ -18,11 +20,11 @@ public class EmployeeModel {
         this.address =address;
     }
 
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(int id) { this.id = id; }
+    public void setId(UUID id) { this.id = id; }
 
     public String getUsername() { return username; }
 

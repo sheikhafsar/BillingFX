@@ -1,5 +1,7 @@
 package model;
 
+import javafx.scene.control.Button;
+
 public class ProductModel {
     int id;
     String name;
