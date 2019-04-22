@@ -1,5 +1,7 @@
 package controller;
 
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.BooleanBinding;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -68,6 +70,13 @@ public class BillTemplateController implements Initializable {
     @FXML
     private Button billGenerateBtn;
 
+
+    @FXML
+    private Button addProdButton;
+
+    @FXML
+    private Button deleteProdBtn;
+
     ObservableList<ProductModel> oblist = FXCollections.observableArrayList();
 
     //TableView.TableViewSelectionModel selectionModel = prodTable.getSelectionModel();
@@ -101,6 +110,20 @@ public class BillTemplateController implements Initializable {
 
         System.out.println("date:"+dtf.format(now));
         dateLabel.setText(dtf.format(now));
+
+        //add button enable
+        BooleanBinding booleanBind = searchTextArea.textProperty().isEmpty()
+                .or(qtyTextField.textProperty().isEmpty());
+        System.out.println("booleanBind:"+booleanBind);
+        addProdButton.disableProperty().bind(booleanBind);
+
+        //delete button enable
+      //  BooleanBinding booleanBind1 = new BooleanBinding(prodTable.getSelectionModel().isEmpty());
+
+        deleteProdBtn.disableProperty().bind(Bindings.isEmpty(prodTable.getSelectionModel().getSelectedItems()));
+
+        BooleanBinding booleanBind1 = customerNameField.textProperty().isEmpty().or(Bindings.isNotEmpty(prodTable.getItems()));
+        billGenerateBtn.disableProperty().bind(booleanBind1);
     }
 
     public void logoutHandler(ActionEvent actionEvent) throws IOException {
@@ -174,6 +197,7 @@ public class BillTemplateController implements Initializable {
                         sum=sum+prod.getTotal();
                     }
                     grandTotal.setText(String.valueOf(sum));
+                    errorOutput.setText("");
                 }
                 else{
                     if(rs.getInt("quantity")>0)
@@ -193,6 +217,10 @@ public class BillTemplateController implements Initializable {
                 con.close();
             }
         }
+
+      /*  if (oblist.size()!=0){
+
+        } */
 
     }
 
@@ -286,12 +314,16 @@ public class BillTemplateController implements Initializable {
         customerNameField.clear();
         oblist.clear();
         grandTotal.setText("");
+        searchTextArea.clear();
+        qtyTextField.clear();
     }
 
     public void deleteProdHandler(ActionEvent actionEvent) {
         System.out.println("sum(Delete)"+sum);
         System.out.println("prodTotal(Delete)"+prodTable.getSelectionModel().getSelectedItem().getTotal());
         grandTotal.setText(String.valueOf(Double.parseDouble(grandTotal.getText())-prodTable.getSelectionModel().getSelectedItem().getTotal()));
+        System.out.println("selected :"+prodTable.getSelectionModel().isEmpty());
         prodTable.getItems().removeAll(prodTable.getSelectionModel().getSelectedItem());
+
     }
 }

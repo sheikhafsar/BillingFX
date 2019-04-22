@@ -2,7 +2,6 @@ package controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
@@ -17,27 +16,27 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.DBHandler;
-import model.ModelTable;
+import model.EmployeeModel;
 
 
 public class EmployeeController implements Initializable {
     @FXML
-    private TableView<ModelTable> table;
+    private TableView<EmployeeModel> table;
     @FXML
-    private TableColumn<ModelTable,String> col_id;
+    private TableColumn<EmployeeModel,String> col_id;
     @FXML
-    private TableColumn<ModelTable ,String> col_name;
+    private TableColumn<EmployeeModel,String> col_name;
     @FXML
-    private TableColumn<ModelTable ,String> col_email;
+    private TableColumn<EmployeeModel,String> col_email;
     @FXML
-    private TableColumn<ModelTable ,String> col_phone;
+    private TableColumn<EmployeeModel,String> col_phone;
     @FXML
-    private TableColumn<ModelTable ,String> col_address;
+    private TableColumn<EmployeeModel,String> col_address;
 
 
-    ObservableList<ModelTable> oblist = FXCollections.observableArrayList();
+    ObservableList<EmployeeModel> oblist = FXCollections.observableArrayList();
 
-    //ObservableList<ModelTable>
+    //ObservableList<EmployeeModel>
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -48,7 +47,7 @@ public class EmployeeController implements Initializable {
 
             while (rs.next()){
                 System.out.println("id: "+rs.getString("id"));
-                oblist.add(new ModelTable(rs.getString("id"),rs.getString("firstname"),rs.getString("email"),rs.getString("phone"),rs.getString("address")));
+                oblist.add(new EmployeeModel(rs.getInt("id"),rs.getString("username"),rs.getString("password"),rs.getString("firstname"),rs.getString("lastname"),rs.getString("email"),rs.getString("phone"),rs.getString("address")));
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
