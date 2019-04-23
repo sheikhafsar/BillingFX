@@ -22,6 +22,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.UUID;
 
 public class LoginController {
     private Label label;
@@ -120,7 +121,8 @@ public class LoginController {
 
             if (rs.next()){
                 System.out.println("Name: "+rs.getString("username"));
-                UserSession.loggedInUser= UserSession.getInstance(rs.getString("username"),rs.getInt("id"));
+                UUID temp_id = UUID.randomUUID();
+                UserSession.loggedInUser= UserSession.getInstance(rs.getString("username"), temp_id);
                 System.out.println("LoggedIn Admin:"+UserSession.loggedInUser.getUserName());
                 //loginOutput.setText(rs.getString("firstname")+" "+rs.getString("lastname"));
 
@@ -160,7 +162,7 @@ public class LoginController {
 
             if (rs.next()){
                 System.out.println("Name: "+rs.getString("firstname")+" "+rs.getString("lastname"));
-                UserSession.loggedInUser= UserSession.getInstance(rs.getString("firstname"),rs.getInt("id"));
+                UserSession.loggedInUser= UserSession.getInstance(rs.getString("firstname"),UUID.fromString(rs.getString("id")));
                 System.out.println("LoggedIn user:"+UserSession.loggedInUser.getUserName());
                 //loginOutput.setText(rs.getString("firstname")+" "+rs.getString("lastname"));
 

@@ -1,5 +1,7 @@
 package model;
 
+import java.util.UUID;
+
 public class UserSession {
 
     private static UserSession instance;
@@ -8,14 +10,14 @@ public class UserSession {
 
     private String userName;
 
-    private int userId;
+    private UUID userId;
 
-    private UserSession(String userName, int userId) {
+    private UserSession(String userName, UUID userId) {
         this.userName = userName;
         this.userId = userId;
     }
 
-    public static UserSession getInstance(String userName,int userId) {
+    public static UserSession getInstance(String userName,UUID userId) {
         if(instance == null) {
             instance = new UserSession(userName,userId);
         }
@@ -30,11 +32,11 @@ public class UserSession {
         return userName;
     }
 
-    public int getUserId() {
+    public UUID getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(UUID userId) {
         this.userId = userId;
     }
 }

@@ -14,8 +14,8 @@
                     </font>
                 </Label>
                 <Button fx:id="empDetailBtn" layoutX="11.0" layoutY="267.0" userData="/view/employeeView.fxml" onAction="#EmployeeHandler" prefHeight="64.0" prefWidth="228.0" text="Employee" />
-                <Button fx:id="prodDetailBtn" layoutX="13.0" layoutY="378.0" userData="/view/view_1.fxml" onAction="#ProductHandler" prefHeight="64.0" prefWidth="228.0" text="Product" />
-                <Button fx:id="billDetailBtn" layoutX="12.0" layoutY="481.0" userData="/view/view_2.fxml" onAction="#BillDetailHandler" prefHeight="64.0" prefWidth="228.0" text="Bills" />
+                <Button fx:id="prodDetailBtn" layoutX="13.0" layoutY="378.0" userData="/view/productView.fxml" onAction="#ProductHandler" prefHeight="64.0" prefWidth="228.0" text="Product" />
+                <Button fx:id="billDetailBtn" layoutX="12.0" layoutY="481.0" userData="/view/billView.fxml" onAction="#BillDetailHandler" prefHeight="64.0" prefWidth="228.0" text="Bills" />
                 <Button fx:id="logoutBtn" layoutX="51.0" layoutY="717.0" onAction="#logoutHandler" prefHeight="45.0" prefWidth="152.0" text="LOGOUT" />
             </children>
         </AnchorPane>

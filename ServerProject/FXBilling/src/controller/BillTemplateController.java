@@ -24,6 +24,7 @@ import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
+import java.util.UUID;
 
 public class BillTemplateController implements Initializable {
     @FXML
@@ -171,7 +172,7 @@ public class BillTemplateController implements Initializable {
                     }
 
                     if(!prodExistInBill){
-                        oblist.add(new ProductModel(rs.getInt("id"),rs.getString("name"),rs.getString("barcode"),Integer.parseInt(qtyTextField.getText()),rs.getDouble("price"),rs.getDouble("price")*Double.parseDouble(qtyTextField.getText()),rs.getInt("quantity")));
+                        oblist.add(new ProductModel(UUID.fromString(rs.getString("id")),rs.getString("name"),rs.getString("barcode"),Integer.parseInt(qtyTextField.getText()),rs.getDouble("price"),rs.getDouble("price")*Double.parseDouble(qtyTextField.getText()),rs.getInt("quantity")));
                     }
 
 
@@ -241,7 +242,7 @@ public class BillTemplateController implements Initializable {
             ps=con.prepareStatement("insert into bill(date,customer_name,emp_id,amount) values(?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, dateLabel.getText());
             ps.setString(2, customerNameField.getText());
-            ps.setInt(3, UserSession.loggedInUser.getUserId());
+            ps.setString(3, UserSession.loggedInUser.getUserId().toString());
             ps.setString(4, grandTotal.getText());
             ps.executeUpdate();
 
@@ -267,7 +268,7 @@ public class BillTemplateController implements Initializable {
                 con=db.getConnection();
                 ps=con.prepareStatement("insert into bill_prod(bill_id,prod_id,quantity) values(?,?,?)");
                 ps.setInt(1, billId);
-                ps.setInt(2, prod.getId());
+                ps.setString(2, prod.getId().toString());
                 ps.setInt(3, prod.getQuantity());
                 ps.executeUpdate();
 

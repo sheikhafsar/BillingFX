@@ -2,8 +2,10 @@ package model;
 
 import javafx.scene.control.Button;
 
+import java.util.UUID;
+
 public class ProductModel {
-    int id;
+    UUID id;
     String name;
     String barcode;
     int quantity;
@@ -11,7 +13,20 @@ public class ProductModel {
     double total;
     int count;
 
-    public ProductModel(int id, String name, String barcode, int quantity, double price, double total, int count) {
+    public  ProductModel(){};
+
+    //constructor for product insertion to db.
+    public ProductModel(UUID id, String name, String barcode, double price, int count) {
+        this.id = id;
+        this.name = name;
+        this.barcode = barcode;
+        this.price = price;
+        this.count =count;
+    }
+
+
+    //constructor for product addition to bill
+    public ProductModel(UUID id, String name, String barcode, int quantity, double price, double total, int count) {
         this.id = id;
         this.name = name;
         this.barcode = barcode;
@@ -21,11 +36,11 @@ public class ProductModel {
         this.count =count;
     }
 
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
