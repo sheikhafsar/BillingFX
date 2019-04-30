@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 21, 2019 at 09:48 PM
+-- Generation Time: Apr 30, 2019 at 07:52 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.1.12
 
@@ -51,12 +51,29 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 --
 
 CREATE TABLE `bill` (
-  `bill_id` int(3) NOT NULL,
+  `bill_id` int(5) NOT NULL,
   `date` date NOT NULL,
   `customer_name` varchar(20) NOT NULL,
-  `emp_id` int(3) NOT NULL,
+  `emp_id` varchar(50) NOT NULL,
   `amount` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bill`
+--
+
+INSERT INTO `bill` (`bill_id`, `date`, `customer_name`, `emp_id`, `amount`) VALUES
+(1, '2019-04-24', 'afsar', 'eb39ea9f-4e4d-4c2c-bdcc-b62f8d54f031', '110.00'),
+(2, '2019-04-24', 'raj', '344cde7f-a429-4415-a4b9-b57f5a223fb5', '55.00'),
+(3, '2019-04-24', 'pranu', '344cde7f-a429-4415-a4b9-b57f5a223fb5', '100.00'),
+(4, '2019-04-24', 'shweta', '344cde7f-a429-4415-a4b9-b57f5a223fb5', '55.00'),
+(5, '2019-04-24', 'vishu', '344cde7f-a429-4415-a4b9-b57f5a223fb5', '10.00'),
+(6, '2019-04-24', 'harsh', '344cde7f-a429-4415-a4b9-b57f5a223fb5', '45.00'),
+(7, '2019-04-24', 'asd', '344cde7f-a429-4415-a4b9-b57f5a223fb5', '10.00'),
+(8, '2019-04-24', 'dig', '344cde7f-a429-4415-a4b9-b57f5a223fb5', '55.00'),
+(9, '2019-04-24', 'jeff', '344cde7f-a429-4415-a4b9-b57f5a223fb5', '55.00'),
+(10, '2019-04-24', 'anish', '344cde7f-a429-4415-a4b9-b57f5a223fb5', '10.00'),
+(11, '2019-04-24', 'craig', '344cde7f-a429-4415-a4b9-b57f5a223fb5', '135.00');
 
 -- --------------------------------------------------------
 
@@ -66,9 +83,31 @@ CREATE TABLE `bill` (
 
 CREATE TABLE `bill_prod` (
   `bill_id` int(3) NOT NULL,
-  `prod_id` int(2) NOT NULL,
+  `prod_id` varchar(50) NOT NULL,
   `quantity` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bill_prod`
+--
+
+INSERT INTO `bill_prod` (`bill_id`, `prod_id`, `quantity`) VALUES
+(1, '1d9ae3a6-fc46-46ea-b69c-9e2838df2c0b', 11),
+(2, '19399221-cb34-475b-96a6-bb6e19ec67e9', 1),
+(2, '1d9ae3a6-fc46-46ea-b69c-9e2838df2c0b', 1),
+(3, '19399221-cb34-475b-96a6-bb6e19ec67e9', 2),
+(3, '1d9ae3a6-fc46-46ea-b69c-9e2838df2c0b', 1),
+(4, '19399221-cb34-475b-96a6-bb6e19ec67e9', 1),
+(4, '1d9ae3a6-fc46-46ea-b69c-9e2838df2c0b', 1),
+(5, '1d9ae3a6-fc46-46ea-b69c-9e2838df2c0b', 1),
+(6, '19399221-cb34-475b-96a6-bb6e19ec67e9', 1),
+(7, '1d9ae3a6-fc46-46ea-b69c-9e2838df2c0b', 1),
+(8, '19399221-cb34-475b-96a6-bb6e19ec67e9', 1),
+(8, '1d9ae3a6-fc46-46ea-b69c-9e2838df2c0b', 1),
+(9, '19399221-cb34-475b-96a6-bb6e19ec67e9', 1),
+(9, '1d9ae3a6-fc46-46ea-b69c-9e2838df2c0b', 1),
+(10, '1d9ae3a6-fc46-46ea-b69c-9e2838df2c0b', 1),
+(11, '19399221-cb34-475b-96a6-bb6e19ec67e9', 3);
 
 -- --------------------------------------------------------
 
@@ -77,7 +116,7 @@ CREATE TABLE `bill_prod` (
 --
 
 CREATE TABLE `employee` (
-  `id` int(2) NOT NULL,
+  `id` varchar(50) NOT NULL,
   `username` varchar(5) NOT NULL,
   `password` varchar(20) NOT NULL,
   `firstname` varchar(20) NOT NULL,
@@ -92,12 +131,10 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`id`, `username`, `password`, `firstname`, `lastname`, `phone`, `email`, `address`) VALUES
-(1, 'EMP1', 'afsar123', 'Afsar', 'Sheikh', '7038137214', 'sheikhafsar72@gmail.com', 'Mapusa'),
-(2, 'EMP2', '12345', 'Pranita', 'Sawant', '8805472219', '1995sawantpranita@gmail.com', 'Margao'),
-(3, 'EMP3', 'raj123', 'Raj', 'Nadaf', '7350447722', 'rajahmednadaf3@gmail.com', 'Margao'),
-(4, 'EMP4', 'shweta123', 'Shweta', 'Kauthankar', '8766457813', 'sweta.kauthankar@gmail.com', 'Pernem'),
-(5, 'EMP5', 'vishu123', 'Vishwanath', 'Patil', '8408998252', 'vishwanath.patil1996@gmail.com>', 'Porvorim'),
-(6, 'ee', 'ee', 'ee', 'ee', '123', 'asdf', 'Margao');
+('344cde7f-a429-4415-a4b9-b57f5a223fb5', 'aa', 'aa', 'aa', 'aa', 'bb', 'aa', 'bb'),
+('4d6d2914-17d8-4b46-aebd-548cd3d62973', 'ee', 'ee', 'ee', 'ee', 'ee', 'ee', 'ee'),
+('7f54027d-1586-4c98-b567-9b5a7389db0b', 'ff', 'ff', 'dd', 'dd', 'ff', 'ff', 'dd'),
+('eb39ea9f-4e4d-4c2c-bdcc-b62f8d54f031', 'dd', 'dd', 'dd', 'dd', 'dd', 'dd', 'dd');
 
 -- --------------------------------------------------------
 
@@ -106,7 +143,7 @@ INSERT INTO `employee` (`id`, `username`, `password`, `firstname`, `lastname`, `
 --
 
 CREATE TABLE `product` (
-  `id` int(2) NOT NULL,
+  `id` varchar(50) NOT NULL,
   `name` varchar(20) NOT NULL,
   `barcode` varchar(13) NOT NULL,
   `quantity` int(3) NOT NULL,
@@ -118,8 +155,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `barcode`, `quantity`, `price`) VALUES
-(1, 'Youva Book', '8902442208032', 10, '45.00'),
-(2, 'Maxwriter pen', '8904075213995', 10, '10.00');
+('19399221-cb34-475b-96a6-bb6e19ec67e9', 'Classmate Note Book', '8902519003300', 17, '45.00'),
+('1d9ae3a6-fc46-46ea-b69c-9e2838df2c0b', 'Cello Maxwriter Pen', '8904075213995', 20, '10.00');
 
 --
 -- Indexes for dumped tables
@@ -178,19 +215,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `bill_id` int(3) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `employee`
---
-ALTER TABLE `employee`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `product`
---
-ALTER TABLE `product`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `bill_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
@@ -200,14 +225,14 @@ ALTER TABLE `product`
 -- Constraints for table `bill`
 --
 ALTER TABLE `bill`
-  ADD CONSTRAINT `bill_ibfk_1` FOREIGN KEY (`emp_id`) REFERENCES `employee` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `bill_ibfk_1` FOREIGN KEY (`emp_id`) REFERENCES `employee` (`id`);
 
 --
 -- Constraints for table `bill_prod`
 --
 ALTER TABLE `bill_prod`
   ADD CONSTRAINT `bill_prod_ibfk_1` FOREIGN KEY (`bill_id`) REFERENCES `bill` (`bill_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `bill_prod_ibfk_2` FOREIGN KEY (`prod_id`) REFERENCES `product` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `bill_prod_ibfk_2` FOREIGN KEY (`prod_id`) REFERENCES `product` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
