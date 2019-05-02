@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="loginbg" stylesheets="@../Stylesheet/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:id="mainBorderPane" fx:controller="controller.adminDashboardController">
+<BorderPane fx:id="mainBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="loginbg" stylesheets="@../Stylesheet/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.adminDashboardController">
     <left>
-        <AnchorPane prefHeight="800.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="602.0" prefWidth="250.0" styleClass="view-border" BorderPane.alignment="CENTER">
             <children>
-                <Label fx:id="username" layoutX="62.0" layoutY="44.0" prefHeight="35.0" prefWidth="127.0" text="Admin Name">
-                    <font>
-                        <Font name="Arial Black" size="18.0" />
-                    </font>
-                </Label>
-                <Button fx:id="empDetailBtn" layoutX="11.0" layoutY="267.0" userData="/view/employeeView.fxml" onAction="#EmployeeHandler" prefHeight="64.0" prefWidth="228.0" text="Employee" />
-                <Button fx:id="prodDetailBtn" layoutX="13.0" layoutY="378.0" userData="/view/productView.fxml" onAction="#ProductHandler" prefHeight="64.0" prefWidth="228.0" text="Product" />
-                <Button fx:id="billDetailBtn" layoutX="12.0" layoutY="481.0" userData="/view/billView.fxml" onAction="#BillDetailHandler" prefHeight="64.0" prefWidth="228.0" text="Bills" />
-                <Button fx:id="logoutBtn" layoutX="51.0" layoutY="717.0" onAction="#logoutHandler" prefHeight="45.0" prefWidth="152.0" text="LOGOUT" />
+                <Button fx:id="empDetailBtn" layoutX="11.0" layoutY="44.0" onAction="#EmployeeHandler" prefHeight="64.0" prefWidth="228.0" style="-fx-background-color: #24E8D4;" text="Employee" userData="/view/employeeView.fxml" />
+                <Button fx:id="prodDetailBtn" layoutX="11.0" layoutY="169.0" onAction="#ProductHandler" prefHeight="64.0" prefWidth="228.0" style="-fx-background-color: #24E8D4;" text="Product" userData="/view/productView.fxml" />
+                <Button fx:id="billDetailBtn" layoutX="11.0" layoutY="286.0" onAction="#BillDetailHandler" prefHeight="64.0" prefWidth="228.0" style="-fx-background-color: #24E8D4;" text="Bills" userData="/view/billView.fxml" />
+                <Button fx:id="logoutBtn" layoutX="38.0" layoutY="529.0" onAction="#logoutHandler" prefHeight="45.0" prefWidth="152.0" styleClass="btn-login" text="LOGOUT" />
             </children>
         </AnchorPane>
     </left>
@@ -26,5 +22,20 @@
         <fx:include source="/view/employeeView.fxml" />
         -->
     </center>
+   <top>
+      <Pane prefHeight="165.0" prefWidth="1000.0" style="-fx-border-color: black;" BorderPane.alignment="CENTER">
+         <children>
+            <StackPane prefHeight="173.0" prefWidth="250.0" style="-fx-border-color: black; -fx-border-style: solid solid none none;">
+               <children>
+                      <Label fx:id="username" prefHeight="35.0" prefWidth="127.0" text="Admin Name">
+                          <font>
+                              <Font name="Arial Black" size="18.0" />
+                          </font>
+                      </Label>
+               </children>
+            </StackPane>
+         </children>
+      </Pane>
+   </top>
 
 </BorderPane>

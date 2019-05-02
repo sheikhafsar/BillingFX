@@ -27,7 +27,7 @@ public class DBHandler {
 
         Connection con=null;
         Class.forName("com.mysql.cj.jdbc.Driver");
-        con= DriverManager.getConnection("jdbc:mysql://localhost:3306/billing", "afsar", "afsar123");
+        con= DriverManager.getConnection("jdbc:mysql://localhost:3306/billing", "root", "");
         return con;
 
     }

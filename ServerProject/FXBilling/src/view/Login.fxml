@@ -65,7 +65,8 @@
                                 </Label>
                             </children>
                         </Group>
-                        <Label fx:id="loginOutput" layoutX="114.0" layoutY="454.0" prefHeight="27.0" prefWidth="280.0" />
+                        <Label fx:id="loginOutput" layoutX="114.0" layoutY="454.0" prefHeight="27.0" prefWidth="280.0" styleClass="lbl-warning" stylesheets="@../Stylesheet/style.css" />
+                  <Label fx:id="loginOutput1" layoutX="124.0" layoutY="464.0" prefHeight="27.0" prefWidth="280.0" style="-fx-text-fill: red;" />
                     </children>
                 </AnchorPane>
             </children>

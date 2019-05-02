@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="800.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductController">
     <children>
-        <TableView fx:id="prodTable" layoutX="50.0" layoutY="152.0" prefHeight="631.0" prefWidth="622.0">
+        <TableView fx:id="prodTable" layoutX="15.0" layoutY="116.0" prefHeight="636.0" prefWidth="691.0">
             <columns>
             <TableColumn fx:id="col_prodId" prefWidth="75.0" text="id" visible="false" />
                 <TableColumn fx:id="col_prodName" prefWidth="75.0" text="Name" />
@@ -22,22 +22,22 @@
                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
             </columnResizePolicy>
         </TableView>
-        <Label layoutX="494.0" layoutY="42.0" prefHeight="64.0" prefWidth="223.0" text="Product Details">
+        <Label layoutX="376.0" layoutY="-18.0" prefHeight="64.0" prefWidth="223.0" text="Product Details">
             <font>
                 <Font name="Arial Bold" size="24.0" />
             </font>
         </Label>
-        <Pane layoutX="678.0" layoutY="186.0" prefHeight="597.0" prefWidth="336.0">
+        <Pane layoutX="678.0" layoutY="122.0" prefHeight="661.0" prefWidth="336.0">
             <children>
                 <TextField fx:id="prodIDText" layoutX="51.0" layoutY="116.0" prefHeight="38.0" prefWidth="260.0" promptText="Enter Product ID" visible="false" />
-                <TextField fx:id="prodNameText" layoutX="51.0" layoutY="168.0" prefHeight="38.0" prefWidth="260.0" promptText="Enter Product Name" />
-                <TextField fx:id="prodBarCodeText" layoutX="51.0" layoutY="219.0" prefHeight="38.0" prefWidth="260.0" promptText="Enter Product Barcode" />
-                <TextField fx:id="prodQtyText" layoutX="51.0" layoutY="270.0" prefHeight="38.0" prefWidth="260.0" promptText="Enter Product Quantity" />
-                <TextField fx:id="prodPriceText" layoutX="52.0" layoutY="322.0" prefHeight="38.0" prefWidth="260.0" promptText="Enter Product Price" />
-                <Button fx:id="prodAddBtn" layoutX="14.0" layoutY="390.0" mnemonicParsing="false" onAction="#prodAddHandler" prefHeight="39.0" prefWidth="93.0" text="Add" />
-                <Button fx:id="prodDeleteBtn" layoutX="229.0" layoutY="390.0" mnemonicParsing="false" onAction="#prodDeleteHandler" prefHeight="39.0" prefWidth="93.0" text="Delete" />
+                <TextField fx:id="prodNameText" layoutX="51.0" layoutY="55.0" prefHeight="38.0" prefWidth="260.0" promptText="Enter Product Name" />
+                <TextField fx:id="prodBarCodeText" layoutX="51.0" layoutY="135.0" prefHeight="38.0" prefWidth="260.0" promptText="Enter Product Barcode" />
+                <TextField fx:id="prodQtyText" layoutX="51.0" layoutY="203.0" prefHeight="38.0" prefWidth="260.0" promptText="Enter Product Quantity" />
+                <TextField fx:id="prodPriceText" layoutX="51.0" layoutY="271.0" prefHeight="38.0" prefWidth="260.0" promptText="Enter Product Price" />
+                <Button fx:id="prodAddBtn" layoutX="51.0" layoutY="344.0" mnemonicParsing="false" onAction="#prodAddHandler" prefHeight="39.0" prefWidth="59.0" style="-fx-background-color: #7FA8E5;" text="Add" />
+                <Button fx:id="prodDeleteBtn" layoutX="233.0" layoutY="344.0" mnemonicParsing="false" onAction="#prodDeleteHandler" prefHeight="39.0" prefWidth="78.0" style="-fx-background-color: red;" text="Delete" />
             <Label fx:id="ErrorOutput" layoutX="165.0" layoutY="494.0" />
-            <Button fx:id="prodUpdateBtn" layoutX="121.0" layoutY="390.0" mnemonicParsing="false" onAction="#prodUpdateHandler" prefHeight="39.0" prefWidth="93.0" text="Update" />
+            <Button fx:id="prodUpdateBtn" layoutX="129.0" layoutY="344.0" mnemonicParsing="false" onAction="#prodUpdateHandler" prefHeight="39.0" prefWidth="78.0" style="-fx-background-color: #48F613;" text="Update" />
             </children>
         </Pane>
     </children>

@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EmployeeController">
+<AnchorPane prefHeight="716.0" prefWidth="1028.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EmployeeController">
    <children>
-      <TableView fx:id="table" layoutX="8.0" layoutY="160.0" prefHeight="631.0" prefWidth="786.0">
+      <TableView fx:id="table" layoutX="8.0" layoutY="140.0" prefHeight="651.0" prefWidth="786.0">
          <columns>
             <TableColumn fx:id="col_id" prefWidth="52.0" text="id" visible="false" />
             <TableColumn fx:id="col_username" prefWidth="103.0" text="username" />
@@ -25,20 +25,20 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="398.0" layoutY="54.0" prefHeight="59.0" prefWidth="234.0" text="Employee Table">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="398.0" layoutY="-29.0" prefHeight="59.0" prefWidth="234.0" text="Employee Table">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Label>
-      <Pane layoutX="794.0" layoutY="160.0" prefHeight="631.0" prefWidth="234.0">
+      <Pane layoutX="794.0" layoutY="110.0" prefHeight="681.0" prefWidth="234.0">
          <children>
             <TextField fx:id="empFNText" layoutX="17.0" layoutY="210.0" prefHeight="31.0" prefWidth="199.0" promptText="Enter Employee First Name" />
             <TextField fx:id="empLNText" layoutX="17.0" layoutY="276.0" prefHeight="31.0" prefWidth="199.0" promptText="Enter Employee Last Name" />
             <TextField fx:id="empEmailText" layoutX="18.0" layoutY="333.0" prefHeight="31.0" prefWidth="199.0" promptText="Enter Employee Email" />
             <TextField fx:id="empAddressText" layoutX="19.0" layoutY="457.0" prefHeight="31.0" prefWidth="199.0" promptText="Enter Employee Address" />
             <TextField fx:id="empPhoneText" layoutX="18.0" layoutY="392.0" prefHeight="31.0" prefWidth="199.0" promptText="Enter Employee Phone" />
-            <Button fx:id="AddEmpBtn" layoutX="11.0" layoutY="505.0" mnemonicParsing="false" onAction="#AddEmployeeHandler" prefHeight="27.0" prefWidth="71.0" text="Add " />
-            <Button fx:id="empDeleteBtn" layoutX="160.0" layoutY="505.0" mnemonicParsing="false" onAction="#RemoveEmployee" prefHeight="27.0" prefWidth="71.0" text="Delete" />
+            <Button fx:id="AddEmpBtn" layoutX="11.0" layoutY="505.0" mnemonicParsing="false" onAction="#AddEmployeeHandler" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: #7FA8E5;" text="Add " />
+            <Button fx:id="empDeleteBtn" layoutX="160.0" layoutY="505.0" mnemonicParsing="false" onAction="#RemoveEmployee" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: red;" text="Delete" />
             <Label layoutX="43.0" layoutY="14.0" text="Employee Details">
                <font>
                   <Font name="Arial Bold" size="18.0" />
@@ -47,8 +47,8 @@
             <TextField fx:id="empUsernameText" layoutX="18.0" layoutY="89.0" prefHeight="31.0" prefWidth="199.0" promptText="Enter Employee  UserName" />
             <TextField fx:id="empPassText" layoutX="17.0" layoutY="150.0" prefHeight="31.0" prefWidth="199.0" promptText="Enter Employee Password" />
             <TextField fx:id="empIDText" layoutX="17.0" layoutY="56.0" prefHeight="31.0" prefWidth="199.0" promptText="Enter Employee  ID" visible="false" />
-            <Button fx:id="empUpdateBtn" layoutX="85.0" layoutY="505.0" mnemonicParsing="false" onAction="#UpdateEmployee" prefHeight="27.0" prefWidth="71.0" text="Update" />
-            <Label fx:id="ErrorOutput" layoutX="43.0" layoutY="562.0" prefHeight="40.0" prefWidth="149.0" textFill="#cd0909" />
+            <Button fx:id="empUpdateBtn" layoutX="85.0" layoutY="505.0" mnemonicParsing="false" onAction="#UpdateEmployee" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: #48F613;" text="Update" />
+            <Label fx:id="ErrorOutput" layoutX="43.0" layoutY="562.0" prefHeight="40.0" prefWidth="149.0" style="-fx-text-fill: black;" textFill="#d78fd7" />
             <Label layoutX="17.0" layoutY="72.0" text="Enter UserName" />
             <Label layoutX="17.0" layoutY="133.0" text="Enter Password" />
             <Label layoutX="17.0" layoutY="193.0" text="Enter First Name" />
