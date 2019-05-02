@@ -65,7 +65,7 @@ visibility:hidden;
 
 
 .lbl-prompt{
--fx-background-color:red;
+-fx-text-fill:#FFF;
 
 }
 
@@ -73,4 +73,9 @@ visibility:hidden;
         -fx-border-color:black;
         -fx-border-style: solid solid solid solid;
 
+}
+
+.border-sidebar{
+         -fx-border-color:black;
+                -fx-border-style: none solid none solid;
 }

@@ -11,18 +11,13 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="loginbg" stylesheets="@../Stylesheet/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BillTemplateController">
     <left>
-        <AnchorPane prefHeight="459.0" prefWidth="461.0" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="459.0" prefWidth="461.0" style="-fx-border-color: black; -fx-border-style: none solid none solid;" BorderPane.alignment="CENTER">
             <children>
                 <TextField fx:id="searchTextArea" focusTraversable="false" layoutX="80.0" layoutY="73.0" pickOnBounds="false" prefHeight="37.0" prefWidth="201.0" promptText="Product Barcode" />
                 <Button fx:id="addProdButton" layoutX="181.0" layoutY="146.0" mnemonicParsing="false" onAction="#addProdHandler" prefHeight="31.0" prefWidth="77.0" style="-fx-background-color: #7FA8E5;" text="Add" />
             <Label fx:id="errorOutput" layoutX="129.0" layoutY="274.0" />
             <TextField fx:id="qtyTextField" layoutX="309.0" layoutY="73.0" prefHeight="37.0" prefWidth="55.0" promptText="qty" />
             <Button fx:id="deleteProdBtn" layoutX="181.0" layoutY="204.0" mnemonicParsing="false" onAction="#deleteProdHandler" prefHeight="31.0" prefWidth="77.0" style="-fx-background-color: #48F613;" text="Delete" />
-                <Button fx:id="logoutBtn" layoutX="177.0" layoutY="345.0" mnemonicParsing="false" onAction="#logoutHandler" prefHeight="35.0" prefWidth="124.0" styleClass="btn-login" text="LOGOUT">
-                    <font>
-                        <Font size="18.0" />
-                    </font>
-                </Button>
             </children>
         </AnchorPane>
     </left>
@@ -54,6 +49,11 @@
                 </Label>
                 <Label layoutX="621.0" layoutY="67.0" text="Grand Total" />
                 <Button fx:id="billGenerateBtn" layoutX="1075.0" layoutY="62.0" mnemonicParsing="false" onAction="#billGenerateHandler" prefHeight="31.0" prefWidth="79.0" style="-fx-background-color: aqua;" text="Submit" />
+                <Button fx:id="logoutBtn" layoutX="180.0" layoutY="75.0" mnemonicParsing="false" onAction="#logoutHandler" prefHeight="35.0" prefWidth="124.0" styleClass="btn-login" text="LOGOUT">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
             </children>
         </AnchorPane>
     </bottom>
