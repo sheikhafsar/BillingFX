@@ -39,5 +39,38 @@
 
 .tab-pane.tab-header-area{
 
-/*visibility:hidden;*/
+visibility:hidden;
+}
+
+.lbl-warning{
+
+-fx-text-fill: red;
+}
+
+.btn-emp{
+
+-fx-background-color:#9013fb;
+         -fx-text-fill:#FFF;
+         -fx-font-size:15px;
+         -fx-font-weight:700;
+         -fx-background-radius:8px;
+
+}
+
+.view-border{
+-fx-border-color:black;
+-fx-border-style: none solid solid solid;
+
+}
+
+
+.lbl-prompt{
+-fx-background-color:red;
+
+}
+
+.border-bill-top{
+        -fx-border-color:black;
+        -fx-border-style: solid solid solid solid;
+
 }
